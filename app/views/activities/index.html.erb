@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Content</th>
+      <th>Things</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= activity.name %></td>
         <td><%= activity.content %></td>
+        <td><% activity.things.each do |thing| %>
+            <%= thing.name %>,
+            <% end %>
+        </td>
+
         <td><%= link_to 'Show', activity %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
         <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>

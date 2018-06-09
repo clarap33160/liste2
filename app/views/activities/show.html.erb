@@ -10,5 +10,13 @@
   <%= @activity.content %>
 </p>
 
+<p>
+  <strong>Things</strong>
+  <% @activity.things.each do |thing| %>
+            <%= thing.name %>
+            <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>

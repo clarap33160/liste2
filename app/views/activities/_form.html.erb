@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nom %>
     <%= form.text_field :name, id: :activity_name %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :Explication %>
     <%= form.text_area :content, id: :activity_content %>
+  </div>
+  <div class="field">
+
+    <%= collection_select(:activity, :thing_ids, Thing.all, :id, :name, :prompt => "S'il vous plait sélectionnez des items") %>
+
   </div>
 
   <div class="actions">
