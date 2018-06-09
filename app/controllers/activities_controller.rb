@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
-    @activity.thing_ids = params[:thing_ids]
+    @activity.thing_ids = params[:activity][:thing_ids]
 
     respond_to do |format|
       if @activity.save
